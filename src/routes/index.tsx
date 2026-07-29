@@ -1,24 +1,226 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Phone, MapPin, Clock, Star, Leaf, Axe, TreeDeciduous, Sprout, Truck, ShieldAlert } from "lucide-react";
+import heroImg from "@/assets/hero-tree.jpg";
+import landscapingImg from "@/assets/landscaping.jpg";
+import { LangProvider, useLang } from "@/lib/i18n";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const PHONE = "(317) 529-6350";
+const PHONE_HREF = "tel:+13175296350";
+const ADDRESS = "278 N East St, Plainfield, IN 46168";
+const MAPS = "https://www.google.com/maps/search/?api=1&query=278+N+East+St+Plainfield+IN+46168";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Olivos Tree Services Plus Landscaping | Plainfield, IN" },
+      {
+        name: "description",
+        content:
+          "Tree trimming, removal, stump grinding and landscaping in Plainfield, Indiana. 5.0 stars, free estimates. Se habla español. Call (317) 529-6350.",
+      },
+      { property: "og:title", content: "Olivos Tree Services Plus Landscaping | Plainfield, IN" },
+      {
+        property: "og:description",
+        content:
+          "Servicios de árboles y jardinería en Plainfield, Indiana. Presupuestos gratis. Tree care & landscaping, free estimates.",
+      },
+    ],
+  }),
+  component: () => (
+    <LangProvider>
+      <Home />
+    </LangProvider>
+  ),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+const serviceIcons = [Leaf, Axe, TreeDeciduous, ShieldAlert, Sprout, Truck];
+
+function Header() {
+  const { t, lang, setLang } = useLang();
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
+        <a href="#top" className="flex items-center gap-2">
+          <TreeDeciduous className="h-7 w-7 text-primary" />
+          <span className="font-display text-xl leading-none tracking-wide text-foreground">
+            Olivos Tree Services
+            <span className="block font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Plus Landscaping LLC
+            </span>
+          </span>
+        </a>
+        <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
+          <a href="#services" className="transition-colors hover:text-primary">{t.nav.services}</a>
+          <a href="#about" className="transition-colors hover:text-primary">{t.nav.about}</a>
+          <a href="#gallery" className="transition-colors hover:text-primary">{t.nav.gallery}</a>
+          <a href="#contact" className="transition-colors hover:text-primary">{t.nav.contact}</a>
+        </nav>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setLang(lang === "es" ? "en" : "es")}
+            className="rounded-sm border border-border px-3 py-2 text-xs font-semibold uppercase tracking-wider text-foreground transition-colors hover:bg-secondary"
+          >
+            {t.langLabel}
+          </button>
+          <a
+            href={PHONE_HREF}
+            className="hidden items-center gap-2 rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 sm:inline-flex"
+          >
+            <Phone className="h-4 w-4" /> {t.callNow}
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function Home() {
+  const { t } = useLang();
+  return (
+    <div id="top" className="min-h-screen bg-background">
+      <Header />
+
+      <section className="relative">
+        <img
+          src={heroImg}
+          alt="Arborista profesional podando un árbol con arnés y motosierra"
+          width={1600}
+          height={1104}
+          className="h-[78vh] min-h-[520px] w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(100deg,oklch(0.18_0.04_150/0.92)_0%,oklch(0.18_0.04_150/0.6)_55%,transparent_100%)]" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="mx-auto w-full max-w-6xl px-5">
+            <div className="max-w-2xl">
+              <p className="mb-4 inline-flex items-center gap-2 border-l-2 border-accent pl-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/80">
+                {t.hero.eyebrow}
+              </p>
+              <h1 className="font-display text-5xl leading-[0.95] text-primary-foreground sm:text-7xl">
+                {t.hero.title}
+              </h1>
+              <p className="mt-5 max-w-xl text-base text-primary-foreground/85 sm:text-lg">{t.hero.sub}</p>
+              <div className="mt-7 flex flex-wrap items-center gap-3">
+                <a
+                  href={PHONE_HREF}
+                  className="inline-flex items-center gap-2 rounded-sm bg-accent px-6 py-3 font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5"
+                >
+                  <Phone className="h-4 w-4" /> {t.hero.cta}
+                </a>
+                <a
+                  href="#services"
+                  className="inline-flex items-center rounded-sm border border-primary-foreground/40 px-6 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                >
+                  {t.hero.cta2}
+                </a>
+              </div>
+              <p className="mt-6 flex items-center gap-2 text-sm text-primary-foreground/80">
+                <span className="flex">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                  ))}
+                </span>
+                {t.hero.rating}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="mx-auto max-w-6xl px-5 py-20">
+        <h2 className="font-display text-4xl text-foreground sm:text-5xl">{t.servicesTitle}</h2>
+        <p className="mt-2 max-w-xl text-muted-foreground">{t.servicesSub}</p>
+        <div className="mt-10 grid gap-px overflow-hidden rounded-sm bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {t.services.map((s, i) => {
+            const Icon = serviceIcons[i];
+            return (
+              <article key={s.t} className="bg-card p-7">
+                <Icon className="h-8 w-8 text-primary" />
+                <h3 className="mt-4 font-display text-2xl text-foreground">{s.t}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="bg-[var(--gradient-forest)]">
+        <div className="mx-auto max-w-6xl px-5 py-16">
+          <h2 className="font-display text-4xl text-primary-foreground">{t.whyTitle}</h2>
+          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {t.why.map((w) => (
+              <div key={w.t} className="border-t-2 border-accent pt-4">
+                <h3 className="font-display text-2xl text-primary-foreground">{w.t}</h3>
+                <p className="mt-2 text-sm text-primary-foreground/75">{w.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 lg:grid-cols-2">
+        <div>
+          <h2 className="font-display text-4xl text-foreground sm:text-5xl">{t.aboutTitle}</h2>
+          <p className="mt-4 leading-relaxed text-muted-foreground">{t.aboutBody}</p>
+          <a
+            href={PHONE_HREF}
+            className="mt-6 inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-3 font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            <Phone className="h-4 w-4" /> {PHONE}
+          </a>
+        </div>
+        <div id="gallery">
+          <img
+            src={landscapingImg}
+            alt="Jardín residencial con mantillo fresco, arbustos podados y bordes de piedra"
+            width={1200}
+            height={900}
+            loading="lazy"
+            className="w-full rounded-sm object-cover shadow-[var(--shadow-card)]"
+          />
+          <p className="mt-3 font-display text-xl text-muted-foreground">{t.galleryTitle}</p>
+        </div>
+      </section>
+
+      <section id="contact" className="border-t border-border bg-secondary">
+        <div className="mx-auto max-w-6xl px-5 py-20">
+          <h2 className="font-display text-4xl text-foreground sm:text-5xl">{t.contactTitle}</h2>
+          <p className="mt-2 text-muted-foreground">{t.contactSub}</p>
+          <div className="mt-10 grid gap-8 sm:grid-cols-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{t.phoneLabel}</p>
+              <a href={PHONE_HREF} className="mt-2 flex items-center gap-2 font-display text-2xl text-primary">
+                <Phone className="h-5 w-5" /> {PHONE}
+              </a>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{t.addressLabel}</p>
+              <p className="mt-2 flex items-start gap-2 text-foreground">
+                <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" /> {ADDRESS}
+              </p>
+              <a href={MAPS} target="_blank" rel="noreferrer" className="mt-1 inline-block text-sm font-semibold text-primary underline">
+                {t.directions}
+              </a>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{t.hoursLabel}</p>
+              <p className="mt-2 flex items-start gap-2 text-foreground">
+                <Clock className="mt-1 h-5 w-5 shrink-0 text-primary" /> {t.hours}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-forest-deep">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-8 text-sm text-primary-foreground/70">
+          <p className="font-display text-lg tracking-wide text-primary-foreground">
+            Olivos Tree Services Plus Landscaping LLC
+          </p>
+          <p>
+            © {new Date().getFullYear()} · {t.rights}
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
