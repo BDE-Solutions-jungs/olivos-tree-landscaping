@@ -143,7 +143,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-[var(--gradient-forest)]">
+      <section style={{ backgroundImage: "var(--gradient-forest)" }}>
         <div className="mx-auto max-w-6xl px-5 py-16">
           <h2 className="font-display text-4xl text-primary-foreground">{t.whyTitle}</h2>
           <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
