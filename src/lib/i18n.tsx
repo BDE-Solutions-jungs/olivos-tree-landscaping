@@ -47,6 +47,12 @@ export const content = {
     aboutBody:
       "Somos un equipo local de arboricultura y paisajismo con base en Plainfield, Indiana. Trabajamos con equipo profesional y prácticas seguras para cuidar los árboles y jardines de familias y negocios del área. Hablamos español e inglés.",
     galleryTitle: "Nuestro trabajo",
+    galleryCaptions: [
+      "Remoción segura de árboles grandes",
+      "Trituración de tocones",
+      "Limpieza después de tormentas",
+      "Jardinería y paisajismo",
+    ],
     contactTitle: "Solicite su presupuesto gratis",
     contactSub: "Llame o escriba y le respondemos el mismo día.",
     hoursLabel: "Horario",
@@ -101,6 +107,12 @@ export const content = {
     aboutBody:
       "We're a local tree care and landscaping crew based in Plainfield, Indiana. We use professional equipment and safe climbing practices to care for the trees and yards of families and businesses across the area. We speak both English and Spanish.",
     galleryTitle: "Our work",
+    galleryCaptions: [
+      "Safe large tree removal",
+      "Stump grinding",
+      "Storm damage clean-up",
+      "Landscaping & yard care",
+    ],
     contactTitle: "Request your free estimate",
     contactSub: "Call or message us and we'll get back to you the same day.",
     hoursLabel: "Hours",

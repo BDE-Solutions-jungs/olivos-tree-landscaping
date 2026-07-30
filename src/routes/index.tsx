@@ -2,6 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Phone, MapPin, Clock, Star, Leaf, Axe, TreeDeciduous, Sprout, Truck, ShieldAlert } from "lucide-react";
 import heroImg from "@/assets/hero-tree.jpg";
 import landscapingImg from "@/assets/landscaping.jpg";
+import treeRemovalImg from "@/assets/tree-removal.jpg";
+import stumpGrindingImg from "@/assets/stump-grinding.jpg";
+import stormCleanupImg from "@/assets/storm-cleanup.jpg";
 import { LangProvider, useLang } from "@/lib/i18n";
 
 const PHONE = "(317) 529-6350";
@@ -185,16 +188,36 @@ function Home() {
             <Phone className="h-4 w-4" /> {PHONE}
           </a>
         </div>
-        <div id="gallery">
+        <div>
           <img
-            src={landscapingImg}
+            src={treeRemovalImg}
             alt="Jardín residencial con mantillo fresco, arbustos podados y bordes de piedra"
             width={1200}
             height={900}
             loading="lazy"
             className="w-full rounded-sm object-cover shadow-[var(--shadow-card)]"
           />
-          <p className="mt-3 font-display text-xl text-muted-foreground">{t.galleryTitle}</p>
+        </div>
+      </section>
+
+      <section id="gallery" className="mx-auto max-w-6xl px-4 pb-14 sm:px-5 sm:pb-20">
+        <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.galleryTitle}</h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[treeRemovalImg, stumpGrindingImg, stormCleanupImg, landscapingImg].map((src, i) => (
+            <figure key={src} className="overflow-hidden rounded-sm bg-card shadow-[var(--shadow-card)]">
+              <img
+                src={src}
+                alt={t.galleryCaptions[i]}
+                width={1200}
+                height={900}
+                loading="lazy"
+                className="h-48 w-full object-cover sm:h-56"
+              />
+              <figcaption className="px-4 py-3 text-sm font-medium text-muted-foreground">
+                {t.galleryCaptions[i]}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
