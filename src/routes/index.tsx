@@ -128,7 +128,7 @@ function Home() {
 
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-20">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-foreground/70">{t.welcomeEyebrow}</p>
-        <div className="mt-3 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
+        <div className="mt-3 max-w-3xl">
           <div>
             <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.welcomeTitle}</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">{t.welcomeBody}</p>
@@ -140,13 +140,6 @@ function Home() {
               <Phone className="h-4 w-4" /> {PHONE}
             </a>
           </div>
-          <ul className="grid gap-px self-start overflow-hidden rounded-sm bg-border">
-            {t.welcomePoints.map((p) => (
-              <li key={p} className="flex items-start gap-3 bg-card p-4 text-sm font-medium text-foreground">
-                <Leaf className="mt-0.5 h-4 w-4 shrink-0 text-primary" /> {p}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
