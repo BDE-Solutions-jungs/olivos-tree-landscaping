@@ -39,32 +39,32 @@ function Header() {
   const { t, lang, setLang } = useLang();
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
-        <a href="#top" className="flex items-center gap-2">
-          <TreeDeciduous className="h-7 w-7 text-primary" />
-          <span className="font-display text-xl leading-none tracking-wide text-foreground">
+      <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-5">
+        <a href="#top" className="flex min-w-0 items-center gap-2">
+          <TreeDeciduous className="h-7 w-7 shrink-0 text-primary" />
+          <span className="min-w-0 font-display text-lg leading-none tracking-wide text-foreground sm:text-xl">
             Olivos Tree Services
             <span className="block font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
               Plus Landscaping LLC
             </span>
           </span>
         </a>
-        <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
+        <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground lg:flex">
           <a href="#services" className="transition-colors hover:text-primary">{t.nav.services}</a>
           <a href="#about" className="transition-colors hover:text-primary">{t.nav.about}</a>
           <a href="#gallery" className="transition-colors hover:text-primary">{t.nav.gallery}</a>
           <a href="#contact" className="transition-colors hover:text-primary">{t.nav.contact}</a>
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <button
             onClick={() => setLang(lang === "es" ? "en" : "es")}
-            className="rounded-sm border border-border px-3 py-2 text-xs font-semibold uppercase tracking-wider text-foreground transition-colors hover:bg-secondary"
+            className="shrink-0 rounded-sm border border-border px-3 py-2 text-xs font-semibold uppercase tracking-wider text-foreground transition-colors hover:bg-secondary"
           >
             {t.langLabel}
           </button>
           <a
             href={PHONE_HREF}
-            className="hidden items-center gap-2 rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 sm:inline-flex"
+            className="hidden shrink-0 items-center gap-2 rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 sm:inline-flex"
           >
             <Phone className="h-4 w-4" /> {t.callNow}
           </a>
@@ -86,34 +86,34 @@ function Home() {
           alt="Arborista profesional podando un árbol con arnés y motosierra"
           width={1600}
           height={1104}
-          className="h-[78vh] min-h-[520px] w-full object-cover"
+          className="h-[70vh] min-h-[440px] w-full object-cover sm:h-[78vh] sm:min-h-[520px]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(100deg,oklch(0.18_0.04_150/0.92)_0%,oklch(0.18_0.04_150/0.6)_55%,transparent_100%)]" />
         <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto w-full max-w-6xl px-5">
+          <div className="mx-auto w-full max-w-6xl px-4 sm:px-5">
             <div className="max-w-2xl">
-              <p className="mb-4 inline-flex items-center gap-2 border-l-2 border-accent pl-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/80">
+              <p className="mb-4 inline-flex items-center gap-2 border-l-2 border-accent pl-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-foreground/80 sm:text-xs">
                 {t.hero.eyebrow}
               </p>
-              <h1 className="font-display text-5xl leading-[0.95] text-primary-foreground sm:text-7xl">
+              <h1 className="font-display text-4xl leading-[0.95] text-primary-foreground sm:text-7xl">
                 {t.hero.title}
               </h1>
-              <p className="mt-5 max-w-xl text-base text-primary-foreground/85 sm:text-lg">{t.hero.sub}</p>
+              <p className="mt-4 max-w-xl text-sm text-primary-foreground/85 sm:mt-5 sm:text-lg">{t.hero.sub}</p>
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <a
                   href={PHONE_HREF}
-                  className="inline-flex items-center gap-2 rounded-sm bg-accent px-6 py-3 font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 rounded-sm bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 sm:px-6 sm:text-base"
                 >
                   <Phone className="h-4 w-4" /> {t.hero.cta}
                 </a>
                 <a
                   href="#services"
-                  className="inline-flex items-center rounded-sm border border-primary-foreground/40 px-6 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                  className="inline-flex items-center rounded-sm border border-primary-foreground/40 px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10 sm:px-6 sm:text-base"
                 >
                   {t.hero.cta2}
                 </a>
               </div>
-              <p className="mt-6 flex items-center gap-2 text-sm text-primary-foreground/80">
+              <p className="mt-6 flex flex-wrap items-center gap-2 text-xs text-primary-foreground/80 sm:text-sm">
                 <span className="flex">
                   {[0, 1, 2, 3, 4].map((i) => (
                     <Star key={i} className="h-4 w-4 fill-accent text-accent" />
@@ -126,8 +126,32 @@ function Home() {
         </div>
       </section>
 
-      <section id="services" className="mx-auto max-w-6xl px-5 py-20">
-        <h2 className="font-display text-4xl text-foreground sm:text-5xl">{t.servicesTitle}</h2>
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-20">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-foreground/70">{t.welcomeEyebrow}</p>
+        <div className="mt-3 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
+          <div>
+            <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.welcomeTitle}</h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">{t.welcomeBody}</p>
+            <p className="mt-4 leading-relaxed text-muted-foreground">{t.welcomeBody2}</p>
+            <a
+              href={PHONE_HREF}
+              className="mt-6 inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              <Phone className="h-4 w-4" /> {PHONE}
+            </a>
+          </div>
+          <ul className="grid gap-px self-start overflow-hidden rounded-sm bg-border">
+            {t.welcomePoints.map((p) => (
+              <li key={p} className="flex items-start gap-3 bg-card p-4 text-sm font-medium text-foreground">
+                <Leaf className="mt-0.5 h-4 w-4 shrink-0 text-primary" /> {p}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section id="services" className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-20">
+        <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.servicesTitle}</h2>
         <p className="mt-2 max-w-xl text-muted-foreground">{t.servicesSub}</p>
         <div className="mt-10 grid gap-px overflow-hidden rounded-sm bg-border sm:grid-cols-2 lg:grid-cols-3">
           {t.services.map((s, i) => {
@@ -144,8 +168,8 @@ function Home() {
       </section>
 
       <section style={{ backgroundImage: "var(--gradient-forest)" }}>
-        <div className="mx-auto max-w-6xl px-5 py-16">
-          <h2 className="font-display text-4xl text-primary-foreground">{t.whyTitle}</h2>
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-16">
+          <h2 className="font-display text-3xl text-primary-foreground sm:text-4xl">{t.whyTitle}</h2>
           <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {t.why.map((w) => (
               <div key={w.t} className="border-t-2 border-accent pt-4">
@@ -157,9 +181,9 @@ function Home() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 lg:grid-cols-2">
+      <section id="about" className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-5 sm:py-20 lg:grid-cols-2">
         <div>
-          <h2 className="font-display text-4xl text-foreground sm:text-5xl">{t.aboutTitle}</h2>
+          <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.aboutTitle}</h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">{t.aboutBody}</p>
           <a
             href={PHONE_HREF}
@@ -182,10 +206,10 @@ function Home() {
       </section>
 
       <section id="contact" className="border-t border-border bg-secondary">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <h2 className="font-display text-4xl text-foreground sm:text-5xl">{t.contactTitle}</h2>
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-20">
+          <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.contactTitle}</h2>
           <p className="mt-2 text-muted-foreground">{t.contactSub}</p>
-          <div className="mt-10 grid gap-8 sm:grid-cols-3">
+          <div className="mt-8 grid gap-8 sm:mt-10 sm:grid-cols-3">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{t.phoneLabel}</p>
               <a href={PHONE_HREF} className="mt-2 flex items-center gap-2 font-display text-2xl text-primary">
@@ -212,7 +236,7 @@ function Home() {
       </section>
 
       <footer className="bg-forest-deep">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-8 text-sm text-primary-foreground/70">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-8 text-sm text-primary-foreground/70 sm:px-5">
           <p className="font-display text-lg tracking-wide text-primary-foreground">
             Olivos Tree Services Plus Landscaping LLC
           </p>

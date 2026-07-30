@@ -15,6 +15,18 @@ export const content = {
       rating: "5.0 estrellas · 29 reseñas en Google",
     },
     servicesTitle: "Nuestros servicios",
+    welcomeEyebrow: "Bienvenido",
+    welcomeTitle: "¡Bienvenido a Olivos Tree Service Plus Landscaping LLC!",
+    welcomeBody:
+      "Sus expertos locales en cuidado profesional de árboles. Desde la remoción segura de árboles y la poda precisa hasta la limpieza de emergencia por tormentas y la trituración de tocones, nuestro equipo mantiene su jardín seguro y hermoso. ¡También ofrecemos servicios de paisajismo!",
+    welcomeBody2:
+      "Atendemos con orgullo el condado de Hendricks y las áreas cercanas de Indiana con servicio confiable y precios honestos. Deje que nuestro equipo con experiencia haga realidad el espacio exterior de sus sueños. ¡Trabajamos con propiedades residenciales y comerciales! Llámenos hoy para más información.",
+    welcomePoints: [
+      "Propiedades residenciales y comerciales",
+      "Condado de Hendricks y alrededores",
+      "Precios honestos y presupuestos gratis",
+      "Limpieza de emergencia por tormentas",
+    ],
     servicesSub: "Todo lo que su propiedad necesita, hecho por un solo equipo.",
     services: [
       { t: "Poda y recorte", d: "Poda técnica que mejora la salud, la forma y la seguridad de sus árboles." },
@@ -57,6 +69,18 @@ export const content = {
       rating: "5.0 stars · 29 Google reviews",
     },
     servicesTitle: "Our services",
+    welcomeEyebrow: "Welcome",
+    welcomeTitle: "Welcome to Olivos Tree Service Plus Landscaping LLC!",
+    welcomeBody:
+      "Your local experts in professional tree care. From safe tree removal and precise pruning to emergency storm clean-up and stump grinding, our team keeps your yard safe and beautiful. Also offering landscaping services!",
+    welcomeBody2:
+      "We proudly serve Hendricks County and surrounding areas in Indiana with reliable service and honest pricing. Let our experienced team bring your dream outdoor living space to life. We do business with residential and commercial properties! Call us today for more information!",
+    welcomePoints: [
+      "Residential & commercial properties",
+      "Hendricks County & surrounding areas",
+      "Honest pricing, free estimates",
+      "Emergency storm clean-up",
+    ],
     servicesSub: "Everything your property needs, handled by one crew.",
     services: [
       { t: "Trimming & pruning", d: "Skilled pruning that improves the health, shape and safety of your trees." },
