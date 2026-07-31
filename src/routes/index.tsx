@@ -178,10 +178,6 @@ function Home() {
         </div>
       </section>
 
-      <section style={{ backgroundImage: "var(--gradient-forest)" }}>
-        <div className="sr-only" />
-      </section>
-
       <section id="gallery" className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-20">
         <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.galleryTitle}</h2>
         <p className="mt-2 max-w-xl text-muted-foreground">{t.gallerySub}</p>
