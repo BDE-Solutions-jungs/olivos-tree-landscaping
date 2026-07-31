@@ -20,7 +20,6 @@ import photo6 from "@/assets/img_8272.jpg.asset.json";
 const galleryPhotos = [photo1, photo2, photo3, photo4, photo5, photo6];
 
 const PHONE = "(317) 529-6350";
-const PHONE_HREF = "tel:+13175296350";
 const ADDRESS = "278 N East St, Plainfield, IN 46168";
 const MAPS = "https://www.google.com/maps/search/?api=1&query=278+N+East+St+Plainfield+IN+46168";
 
