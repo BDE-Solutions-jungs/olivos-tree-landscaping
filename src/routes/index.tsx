@@ -241,27 +241,6 @@ function Home() {
         </div>
       </section>
 
-      <section id="gallery" className="mx-auto max-w-6xl px-4 pb-14 sm:px-5 sm:pb-20">
-        <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.galleryTitle}</h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[treeRemovalImg, stumpGrindingImg, stormCleanupImg, landscapingImg].map((src, i) => (
-            <figure key={src} className="overflow-hidden rounded-sm bg-card shadow-[var(--shadow-card)]">
-              <img
-                src={src}
-                alt={t.galleryCaptions[i]}
-                width={1200}
-                height={900}
-                loading="lazy"
-                className="h-48 w-full object-cover sm:h-56"
-              />
-              <figcaption className="px-4 py-3 text-sm font-medium text-muted-foreground">
-                {t.galleryCaptions[i]}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
-
       <section id="contact" className="border-t border-border bg-secondary">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-20">
           <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.contactTitle}</h2>
