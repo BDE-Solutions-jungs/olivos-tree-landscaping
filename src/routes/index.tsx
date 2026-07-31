@@ -1,11 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, MapPin, Clock, Star, Leaf, Axe, TreeDeciduous, Sprout, Truck, ShieldAlert } from "lucide-react";
 import heroImg from "@/assets/hero-tree.jpg";
-import landscapingImg from "@/assets/landscaping.jpg";
 import treeRemovalImg from "@/assets/tree-removal.jpg";
-import stumpGrindingImg from "@/assets/stump-grinding.jpg";
-import stormCleanupImg from "@/assets/storm-cleanup.jpg";
 import { LangProvider, useLang } from "@/lib/i18n";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import photo1 from "@/assets/img_8076.jpeg.asset.json";
+import photo2 from "@/assets/img_8375.jpeg.asset.json";
+import photo3 from "@/assets/img_7732.jpeg.asset.json";
+import photo4 from "@/assets/e7a1fd93-d60f-4989-8325-113c35a80396.jpg.asset.json";
+import photo5 from "@/assets/img_5870.jpg.asset.json";
+import photo6 from "@/assets/img_8272.jpg.asset.json";
+
+const galleryPhotos = [photo1, photo2, photo3, photo4, photo5, photo6];
 
 const PHONE = "(317) 529-6350";
 const PHONE_HREF = "tel:+13175296350";
@@ -163,6 +175,32 @@ function Home() {
         </div>
       </section>
 
+      <section id="gallery" className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-20">
+        <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.galleryTitle}</h2>
+        <p className="mt-2 max-w-xl text-muted-foreground">{t.gallerySub}</p>
+        <Carousel opts={{ loop: true }} className="mt-8">
+          <CarouselContent>
+            {galleryPhotos.map((p, i) => (
+              <CarouselItem key={p.url} className="sm:basis-1/2 lg:basis-1/3">
+                <figure className="overflow-hidden rounded-sm bg-card shadow-[var(--shadow-card)]">
+                  <img
+                    src={p.url}
+                    alt={t.galleryCaptions[i]}
+                    loading="lazy"
+                    className="h-64 w-full object-cover sm:h-72"
+                  />
+                  <figcaption className="px-4 py-3 text-sm font-medium text-muted-foreground">
+                    {t.galleryCaptions[i]}
+                  </figcaption>
+                </figure>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-2" />
+          <CarouselNext className="right-2" />
+        </Carousel>
+      </section>
+
       <section style={{ backgroundImage: "var(--gradient-forest)" }}>
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-16">
           <h2 className="font-display text-3xl text-primary-foreground sm:text-4xl">{t.whyTitle}</h2>
@@ -197,27 +235,6 @@ function Home() {
             loading="lazy"
             className="w-full rounded-sm object-cover shadow-[var(--shadow-card)]"
           />
-        </div>
-      </section>
-
-      <section id="gallery" className="mx-auto max-w-6xl px-4 pb-14 sm:px-5 sm:pb-20">
-        <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.galleryTitle}</h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[treeRemovalImg, stumpGrindingImg, stormCleanupImg, landscapingImg].map((src, i) => (
-            <figure key={src} className="overflow-hidden rounded-sm bg-card shadow-[var(--shadow-card)]">
-              <img
-                src={src}
-                alt={t.galleryCaptions[i]}
-                width={1200}
-                height={900}
-                loading="lazy"
-                className="h-48 w-full object-cover sm:h-56"
-              />
-              <figcaption className="px-4 py-3 text-sm font-medium text-muted-foreground">
-                {t.galleryCaptions[i]}
-              </figcaption>
-            </figure>
-          ))}
         </div>
       </section>
 
