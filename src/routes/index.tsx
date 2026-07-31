@@ -1,10 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, MapPin, Clock, Star, Leaf, Axe, TreeDeciduous, Sprout, Truck, ShieldAlert } from "lucide-react";
 import heroImg from "@/assets/hero-tree.jpg";
-import landscapingImg from "@/assets/landscaping.jpg";
 import treeRemovalImg from "@/assets/tree-removal.jpg";
-import stumpGrindingImg from "@/assets/stump-grinding.jpg";
-import stormCleanupImg from "@/assets/storm-cleanup.jpg";
 import { LangProvider, useLang } from "@/lib/i18n";
 import {
   Carousel,
