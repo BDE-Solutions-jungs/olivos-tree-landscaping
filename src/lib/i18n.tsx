@@ -47,11 +47,14 @@ export const content = {
     aboutBody:
       "Somos un equipo local de arboricultura y paisajismo con base en Plainfield, Indiana. Trabajamos con equipo profesional y prácticas seguras para cuidar los árboles y jardines de familias y negocios del área. Hablamos español e inglés.",
     galleryTitle: "Nuestro trabajo",
+    gallerySub: "Fotos reales de proyectos terminados en el área de Plainfield.",
     galleryCaptions: [
-      "Remoción segura de árboles grandes",
-      "Trituración de tocones",
-      "Limpieza después de tormentas",
-      "Jardinería y paisajismo",
+      "Bordes de piedra y mantillo fresco",
+      "Preparación de terreno y tierra nueva",
+      "Jardín frontal con mantillo y arbustos",
+      "Limpieza de lote: antes y después",
+      "Remoción de árbol: antes y después",
+      "Renovación de jardín: antes y después",
     ],
     contactTitle: "Solicite su presupuesto gratis",
     contactSub: "Llame o escriba y le respondemos el mismo día.",
