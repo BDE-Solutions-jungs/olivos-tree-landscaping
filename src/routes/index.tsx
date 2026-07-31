@@ -77,12 +77,9 @@ function Header() {
           >
             {t.langLabel}
           </button>
-          <a
-            href={PHONE_HREF}
-            className="hidden shrink-0 items-center gap-2 rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 sm:inline-flex"
-          >
-            <Phone className="h-4 w-4" /> {t.callNow}
-          </a>
+          <span className="hidden shrink-0 items-center gap-2 rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground sm:inline-flex">
+            <Phone className="h-4 w-4" /> {t.callNow}: {PHONE}
+          </span>
         </div>
       </div>
     </header>
