@@ -10,14 +10,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import photo1 from "@/assets/img_8076.jpeg.asset.json";
-import photo2 from "@/assets/img_8375.jpeg.asset.json";
-import photo3 from "@/assets/img_7732.jpeg.asset.json";
-import photo4 from "@/assets/e7a1fd93-d60f-4989-8325-113c35a80396.jpg.asset.json";
-import photo5 from "@/assets/img_5870.jpg.asset.json";
-import photo6 from "@/assets/img_8272.jpg.asset.json";
-
-const galleryPhotos = [photo1, photo2, photo3, photo4, photo5, photo6];
+const galleryPhotos = [
+  "/images/IMG_8076.jpeg",
+  "/images/IMG_8375.jpeg",
+  "/images/IMG_7732.jpeg",
+  "/images/e7a1fd93-d60f-4989-8325-113c35a80396.JPG",
+  "/images/IMG_5870.JPG",
+  "/images/IMG_8272.JPG",
+];
 
 const PHONE = "(317) 529-6350";
 const ADDRESS = "278 N East St, Plainfield, IN 46168";
@@ -170,19 +170,16 @@ function Home() {
         <p className="mt-2 max-w-xl text-muted-foreground">{t.gallerySub}</p>
         <Carousel opts={{ loop: true }} className="mt-8">
           <CarouselContent>
-            {galleryPhotos.map((p, i) => (
-              <CarouselItem key={p.url} className="sm:basis-1/2 lg:basis-1/3">
-                <figure className="overflow-hidden rounded-sm bg-card shadow-[var(--shadow-card)]">
+            {galleryPhotos.map((src) => (
+              <CarouselItem key={src} className="sm:basis-1/2 lg:basis-1/3">
+                <div className="overflow-hidden rounded-sm bg-card shadow-[var(--shadow-card)]">
                   <img
-                    src={p.url}
-                    alt={t.galleryCaptions[i]}
+                    src={src}
+                    alt={t.galleryTitle}
                     loading="lazy"
                     className="h-64 w-full object-cover sm:h-72"
                   />
-                  <figcaption className="px-4 py-3 text-sm font-medium text-muted-foreground">
-                    {t.galleryCaptions[i]}
-                  </figcaption>
-                </figure>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
