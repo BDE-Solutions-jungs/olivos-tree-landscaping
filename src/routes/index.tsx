@@ -20,7 +20,6 @@ import photo6 from "@/assets/img_8272.jpg.asset.json";
 const galleryPhotos = [photo1, photo2, photo3, photo4, photo5, photo6];
 
 const PHONE = "(317) 529-6350";
-const PHONE_HREF = "tel:+13175296350";
 const ADDRESS = "278 N East St, Plainfield, IN 46168";
 const MAPS = "https://www.google.com/maps/search/?api=1&query=278+N+East+St+Plainfield+IN+46168";
 
@@ -112,12 +111,9 @@ function Home() {
               </h1>
               <p className="mt-4 max-w-xl text-sm text-primary-foreground/85 sm:mt-5 sm:text-lg">{t.hero.sub}</p>
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <a
-                  href={PHONE_HREF}
-                  className="inline-flex items-center gap-2 rounded-sm bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 sm:px-6 sm:text-base"
-                >
-                  <Phone className="h-4 w-4" /> {t.hero.cta}
-                </a>
+                <span className="inline-flex items-center gap-2 rounded-sm bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground sm:px-6 sm:text-base">
+                  <Phone className="h-4 w-4" /> {PHONE}
+                </span>
                 <a
                   href="#services"
                   className="inline-flex items-center rounded-sm border border-primary-foreground/40 px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10 sm:px-6 sm:text-base"
@@ -145,12 +141,9 @@ function Home() {
             <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.welcomeTitle}</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">{t.welcomeBody}</p>
             <p className="mt-4 leading-relaxed text-muted-foreground">{t.welcomeBody2}</p>
-            <a
-              href={PHONE_HREF}
-              className="mt-6 inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-            >
+            <span className="mt-6 inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">
               <Phone className="h-4 w-4" /> {PHONE}
-            </a>
+            </span>
           </div>
         </div>
       </section>
@@ -216,12 +209,9 @@ function Home() {
         <div>
           <h2 className="font-display text-3xl text-foreground sm:text-5xl">{t.aboutTitle}</h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">{t.aboutBody}</p>
-          <a
-            href={PHONE_HREF}
-            className="mt-6 inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-3 font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-          >
+          <span className="mt-6 inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-3 font-semibold text-primary-foreground">
             <Phone className="h-4 w-4" /> {PHONE}
-          </a>
+          </span>
         </div>
         <div>
           <img
@@ -242,9 +232,9 @@ function Home() {
           <div className="mt-8 grid gap-8 sm:mt-10 sm:grid-cols-3">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{t.phoneLabel}</p>
-              <a href={PHONE_HREF} className="mt-2 flex items-center gap-2 font-display text-2xl text-primary">
+              <span className="mt-2 flex items-center gap-2 font-display text-2xl text-primary">
                 <Phone className="h-5 w-5" /> {PHONE}
-              </a>
+              </span>
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{t.addressLabel}</p>
