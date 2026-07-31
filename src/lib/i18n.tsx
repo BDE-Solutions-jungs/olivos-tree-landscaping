@@ -110,11 +110,14 @@ export const content = {
     aboutBody:
       "We're a local tree care and landscaping crew based in Plainfield, Indiana. We use professional equipment and safe climbing practices to care for the trees and yards of families and businesses across the area. We speak both English and Spanish.",
     galleryTitle: "Our work",
+    gallerySub: "Real photos from completed projects around Plainfield.",
     galleryCaptions: [
-      "Safe large tree removal",
-      "Stump grinding",
-      "Storm damage clean-up",
-      "Landscaping & yard care",
+      "Stone edging and fresh mulch",
+      "Grading and fresh topsoil",
+      "Front yard mulch and shrub beds",
+      "Lot clearing: before & after",
+      "Tree removal: before & after",
+      "Landscape refresh: before & after",
     ],
     contactTitle: "Request your free estimate",
     contactSub: "Call or message us and we'll get back to you the same day.",
