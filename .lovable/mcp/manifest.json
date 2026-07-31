@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.1",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "olivos-tree-landscaping",
+      "version": "0.1.0",
+      "title": "Olivos Tree & Landscaping"
+    },
+    "tools": [
+      {
+        "name": "get_business_info",
+        "title": "Get business info",
+        "description": "Get contact details, hours, service area, rating and languages for Olivos Tree Service Plus Landscaping LLC.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_services",
+        "title": "List services",
+        "description": "List the tree care and landscaping services offered, optionally filtered by a keyword such as 'stump' or 'storm'.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "query": {
+              "description": "Optional keyword to filter services by name or description.",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_quote_guidance",
+        "title": "Get estimate guidance",
+        "description": "Explain how to request a free estimate for a described job, and what details to have ready when calling.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "job_description": {
+              "description": "Short description of the work needed, e.g. 'remove a large dead oak near the house'.",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
